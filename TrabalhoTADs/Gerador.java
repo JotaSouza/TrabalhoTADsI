@@ -1,8 +1,6 @@
 package TrabalhoTADs;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Gerador {
 
@@ -22,10 +20,27 @@ public class Gerador {
 		while(contador < 1) {
 			//O método get seleciona qualquer elemento existente na lista
 			System.out.println(list.get(contador));
-			//Sempre que for impresso um número, o contatos é incrementado em 1 para sair do loop.
+			//Sempre que for impresso um número, o contador é incrementado em 1 para sair do loop.
 			contador++;
 		}
 	}
-	
+	// Metodo que cria o Array que recebe os parâmetros informados pelo usuário
+	public static ArrayList<Integer> aleatorioIntervalo(int ini, int fim) {
+		//Instancia a variavel que armazena os valores
+		ArrayList<Integer > vet = new ArrayList<Integer>();
+		//Laço que faz a iteração dos valores a partir da informação do usuário
+		for(ini = ini + 1; ini < fim; ini++) {
+			//Metódo da classe Array que adiciona os valores a variável
+			 vet.add(ini);
+		}
+		//Método Shuffle da classe Collections, que faz com que os elementos do Array fiquem desordenados
+		Collections.shuffle(vet);
+		//Impressão dos valores gerados no intervalo, a partir de um índice setado e a posição do elemento a
+		//ser buscada dentro do vetor.
+		System.out.println(vet.set(0, 4));
+		//retorno do método
+		return vet;
+	}
+		
 	
 }
