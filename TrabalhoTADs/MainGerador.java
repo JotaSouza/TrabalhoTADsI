@@ -16,6 +16,7 @@ public class MainGerador {
 				+ "\n[4] - Lançar dados.");
 		System.out.print("Opção-> ");
 		opcao = entrada.nextInt();
+		System.out.println(" ");
 		
 		switch(opcao){
 		case 1:
@@ -47,6 +48,26 @@ public class MainGerador {
 			 
 			break;
 		case 3:
+			do {
+				System.out.println("Escolha:"
+						+ "\n[1] - Cara"
+						+ "\n[2] - Coroa");
+				System.out.print("Opção-> ");
+				numIni = entrada.nextInt();
+				if(numIni< 1 || numIni > 2) {
+					System.out.println("Opção Inválida");					
+					}
+			}while(numIni < 1 || numIni > 2);
+			
+			do {
+				System.out.print("Informe quantas vezes deseja jogar: ");
+				numFim = entrada.nextInt();
+				if(numFim < 1) {
+					System.out.println("Opção Inválida");					
+					}
+			}while(numFim < 1);
+			Gerador.caraOuCoroa(numIni, numFim);
+			
 			break;
 		case 4:
 			break;
