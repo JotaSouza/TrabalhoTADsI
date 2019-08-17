@@ -41,6 +41,32 @@ public class Gerador {
 		//retorno do método
 		return vet;
 	}
-		
 	
+	// Metodo que cria o Array que recebe os parâmetros informados pelo usuário
+		public static ArrayList<Integer> caraOuCoroa(int ini, int fim) {
+			//Instancia a variavel que armazena os valores
+			ArrayList<Integer > vet = new ArrayList<Integer>();
+			//int cara = 0, coroa = 0;
+			//Laço que faz a iteração dos valores a partir da informação do usuário
+			for(ini = ini; ini < fim; ini++) {
+				//Metódo da classe Array que adiciona os valores a variável
+				 vet.add(ini);
+			}
+			//Método Shuffle da classe Collections, que faz com que os elementos do Array fiquem desordenados
+			Collections.shuffle(vet);
+			//Variavel que armazena os valores gerados no intervalo, a partir de um índice setado e a posição do elemento a
+			//ser buscada dentro do vetor.
+			int v = (vet.set(0, 4));
+			//Condição para gerar o resultado do jogo
+			if (v % 2 == 0) {
+				//Saída do resultado
+				System.out.println("Saiu Coroa");
+			} else {
+				//Saída do resultado
+				System.out.println("Saiu Cara");
+			}
+			//retorno do método
+			return vet;
+		}
+		
 }
