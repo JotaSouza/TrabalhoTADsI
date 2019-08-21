@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class MainGerador {
 
 	public static void main(String[] args) {
-		
 		Scanner entrada = new Scanner(System.in);
 		int opcao, numIni = 0, numFim = 0;
 		Gerador gera = new Gerador();
@@ -45,7 +44,7 @@ public class MainGerador {
 			} while (numFim  < numIni);
 			
 			System.out.print("Número gerado no intervalo informado: ");
-			Gerador.aleatorioIntervalo(numIni, numFim);
+			gera.aleatorioIntervalo(numIni, numFim);
 			 
 			break;
 		case 3:
