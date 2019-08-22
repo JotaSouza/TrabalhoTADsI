@@ -6,7 +6,7 @@ public class MainGerador {
 
 	public static void main(String[] args) {
 		Scanner entrada = new Scanner(System.in);
-		int opcao, numIni = 0, numFim = 0;
+		int opcao, numIni = 0, numFim = 0, numDados = 0, numLados = 0, lancamentos = 0;
 		Gerador gera = new Gerador();
 		System.out.println(":::... Gerador de Números Aleatórios ...:::\n"
 				+ "\nPara continuar, escolha uma das funções:" 
@@ -68,6 +68,15 @@ public class MainGerador {
 			
 			break;
 		case 4:
+			System.out.print("Informe quantos dados quer lançar: ");
+			numDados = entrada.nextInt();
+			System.out.print("Opções: 4 lados, 6 lados, 8 lados, 10 lados, 12 lados, 20 lados, 60 lados ou 100 lados."
+					+ "\nInforme a quantidade de lados dos dados: ");
+			numLados = entrada.nextInt();
+			System.out.print("Quantas vezes você quer lançar os dados: ");
+			lancamentos = entrada.nextInt();
+			gera.dados(numDados, numLados, lancamentos);
+			
 			break;
 			default:
 				System.out.println("Opção inválida!");

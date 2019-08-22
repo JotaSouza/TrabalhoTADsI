@@ -12,6 +12,16 @@ public class Gerador {
 	private int fim;
 	private int tamanho = 0;
 	
+	//Atributos jogo de dados
+	private int frequencia1 = 0;
+	private int frequencia2 = 0;
+	private int frequencia3 = 0;
+	private int frequencia4 = 0;
+	private int frequencia5 = 0;
+	private int frequencia6 = 0;
+	private int faceDado;
+	
+	
 	/* OK - a) método aleatório: gera um número aleatório qualquer.
 	   OK - b) método aleatório_intervalo: gera um número aleatório a partir de um intervalo definido.
 	*/
@@ -115,6 +125,38 @@ public class Gerador {
 						return this.aleatorio;
 					}
 			}		
+	}
+	
+	public int dados(int numDados, int numLados, int lancamentos){
+		for(int rolar = 1; rolar <= lancamentos; rolar++){//soma os lançamentos de um lado
+			faceDado = aleatorioIntervalo(1, numLados);//intervalo da quantidade de lados do dado
+			switch(faceDado){//define o valor de lançamento de n lados e incrementa o contador
+			case 1:
+				++frequencia1; //incrementa o contador de 1
+				break;
+			case 2:
+				++frequencia2; //incrementa o contador de 2
+				break;
+			case 3:
+				++frequencia3; //incrementa o contador de 3
+				break;
+			case 4:
+				++frequencia4; //incrementa o contador de 4
+				break;
+			case 5:
+				++frequencia5; //incrementa o contador de 5
+				break;
+			case 6:
+				++frequencia6; //incrementa o contador de 6
+				break;
+			}//fim do switch
+		}//fim do for
+		System.out.println("Face\tFrequência");
+		System.out.printf("1\t%d\n2\t%d\n3\t%d\n4\t%d\n5\t%d\n6\t%d\n",frequencia1, frequencia2, 
+				frequencia3, frequencia4, frequencia5, frequencia6);
+		
+		
+		return numLados;
 	}
 
 	
