@@ -20,8 +20,7 @@ public class MainGerador {
 		
 		switch(opcao){
 		case 1:
-			System.out.print("O número gerado foi: ");
-			gera.aleatorioQualquer();
+			System.out.println(gera.mostrarAleatorio());
 			break;
 		case 2:
 			do {
@@ -42,9 +41,8 @@ public class MainGerador {
 			   } 
 			   	
 			} while (numFim  < numIni);
-			
-			System.out.print("Número gerado no intervalo informado: ");
 			gera.aleatorioIntervalo(numIni, numFim);
+			System.out.println(gera.mostrarAleatorioIntervalo());
 			 
 			break;
 		case 3:
@@ -66,7 +64,7 @@ public class MainGerador {
 					System.out.println("Opção Inválida");					
 					}
 			}while(numFim < 1);
-			Gerador.caraOuCoroa(numIni, numFim);
+			
 			
 			break;
 		case 4:
