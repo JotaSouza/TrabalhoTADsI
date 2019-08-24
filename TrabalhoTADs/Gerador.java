@@ -25,10 +25,11 @@ public class Gerador {
 	private int frequencia91 = 0, frequencia92 = 0, frequencia93 = 0,  frequencia94 = 0, frequencia95 = 0, frequencia96 = 0, frequencia97 = 0, frequencia98 = 0, frequencia99 = 0, frequencia100 = 0;
 	private int faceDado;
 	
+	//Atributos lado da moeda
+	private int frequenciaLado1 = 0;
+	private int frequenciaLado2 = 0;
+	private int ladoMoeda;
 	
-	/* OK - a) método aleatório: gera um número aleatório qualquer.
-	   OK - b) método aleatório_intervalo: gera um número aleatório a partir de um intervalo definido.
-	*/
 
 	private long milissegundos(){ //eleva ao quadrado a variável milissegundos
 		return this.aux = milissegundos * milissegundos;
@@ -130,34 +131,81 @@ public class Gerador {
 					}
 			}		
 	}
+	//Método para o Cara e Coroa
+	public int caraCoroa(int lado, int lancamentos) {
+		for(int flip = 1; flip <= lancamentos; flip++) {//soma os lançamentos de um lado
+			ladoMoeda= aleatorioIntervalo(0, lancamentos);//intervalo da quantidade de lados do dado
+			switch(ladoMoeda) {//define o valor de lançamento de n lados e incrementa o contador
+			case 0:
+				++frequenciaLado1; //incrementa o contador de 1s
+				break;
+			case 1:
+				++frequenciaLado2; //incrementa o contador de 2s
+				break;
+			case 2:
+				++frequenciaLado1;//incrementa o contador de 1s
+				break;
+			case 3:
+				++frequenciaLado2;//incrementa o contador de 2s
+				break;
+			case 4:
+				++frequenciaLado1;//incrementa o contador de 1s
+				break;
+			case 5:
+				++frequenciaLado2;//incrementa o contador de 2s
+				break;
+			case 6:
+				++frequenciaLado1;//incrementa o contador de 1s
+				break;
+			case 7:
+				++frequenciaLado2;//incrementa o contador de 2s
+				break;
+			case 8:
+				++frequenciaLado1;
+				break;
+			case 9:
+				++frequenciaLado2;
+				break;
+			case 10:
+				++frequenciaLado1;
+				break;
+			}
+		}
+		System.out.println("\nResultado:"	+ "\nLado\tFrequência");
+		System.out.printf("Cara\t%d\nCoroa\t%d\n",frequenciaLado1, frequenciaLado2);
+		
+		return 1;
+	}
+		
 	
+	//Método para o Jogo de Dados
 	public int dados(int numLados, int lancamentos){
 		for(int rolar = 1; rolar <= lancamentos; rolar++){//soma os lançamentos de um lado
 			faceDado = aleatorioIntervalo(1, numLados);//intervalo da quantidade de lados do dado
 			switch(faceDado){//define o valor de lançamento de n lados e incrementa o contador
 			case 1:
-				++frequencia1; //incrementa o contador de 1
+				++frequencia1; //incrementa o contador de 1s
 				break;
 			case 2:
-				++frequencia2; //incrementa o contador de 2
+				++frequencia2; //incrementa o contador de 2s
 				break;
 			case 3:
-				++frequencia3; //incrementa o contador de 3
+				++frequencia3; //incrementa o contador de 3s
 				break;
 			case 4:
-				++frequencia4; //incrementa o contador de 4
+				++frequencia4; //incrementa o contador de 4s
 				break;
 			case 5:
-				++frequencia5; //incrementa o contador de 5
+				++frequencia5; //incrementa o contador de 5s
 				break;
 			case 6:
-				++frequencia6; //incrementa o contador de 6
+				++frequencia6; //incrementa o contador de 6s
 				break;
 			case 7:
-				++frequencia7; //incrementa o contador de 7
+				++frequencia7; //incrementa o contador de 7s
 				break;
 			case 8:
-				++frequencia8; //incrementa o contador de 8
+				++frequencia8; //incrementa o contador de 8s
 				break;
 			case 9:
 				++frequencia9;
@@ -437,7 +485,7 @@ public class Gerador {
 
 			}//fim do switch
 		}//fim do for
-		System.out.println("Resultado:"	+ "\nFace\tFrequência");
+		System.out.println("\nResultado:"	+ "\nFace\tFrequência");
 		if(numLados == 4) {
 			System.out.printf("1\t%d\n2\t%d\n3\t%d\n4\t%d\n",frequencia1, frequencia2, 
 					frequencia3, frequencia4);
