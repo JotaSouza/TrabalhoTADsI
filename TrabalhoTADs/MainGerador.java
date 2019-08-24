@@ -64,6 +64,7 @@ public class MainGerador {
 					System.out.println("Opção Inválida");					
 					}
 			}while(numFim < 1);
+			gera.caraCoroa(numIni, numFim);
 			
 			
 			break;
